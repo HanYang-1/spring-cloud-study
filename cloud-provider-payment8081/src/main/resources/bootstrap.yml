@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+      config:
+        #这个是配置文件名以-连接【consul的k-v存储用到】，例如：cloud-payment-service
+        profile-separator: '-'
+        format: YAML
+#        watch:
+#          wait-time: 1
